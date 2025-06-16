@@ -24,7 +24,7 @@ Uber fare pricing is influenced by a combination of geographic and trip-related 
 ## ⚙️ Tools & Libraries
 
 - **Language**: R
-- **Libraries**: dplyr, ggplot2, MASS, caret, randomForest
+- **Libraries**: `dplyr`, `ggplot2`, `MASS`, `caret`, `randomForest`
 - **Models Used**:
   - Stepwise Regression (via AIC)
   - Log-Transformed Linear Regression
@@ -41,16 +41,16 @@ Uber fare pricing is influenced by a combination of geographic and trip-related 
 
 2. **Feature Engineering**:
    - Bucketed geolocation into categories (East/West/North/South)
-   - Calculated derived features from coordinates
+   - Created spatial feature bins
 
 3. **Modeling**:
-   - Stepwise regression with AIC for variable selection
-   - Log transformation to address skew and non-linearity
-   - Polynomial regression for curvilinear trends
-   - Random forest for non-linear interaction learning
+   - Stepwise regression for variable selection
+   - Log transformation to handle skewed fare data
+   - Polynomial regression for non-linearity
+   - Random forest for capturing complex interactions
 
-4. **Model Evaluation**:
-   RMSE was calculated on test data across all models.
+4. **Evaluation**:
+   - RMSE used to assess model performance on the test set
 
 ---
 
@@ -61,19 +61,43 @@ Uber fare pricing is influenced by a combination of geographic and trip-related 
 | Stepwise Regression       | 7.98      |
 | Log-Transformed Regression| 8.82      |
 | Polynomial Regression     | 7.36      |
-| Random Forest             | **5.90**  |
+| **Random Forest**         | **5.90**  |
 
 - ✅ **Best Model**: Random Forest
-- 🌍 Most influential variables: dropoff coordinates, pickup region
+- 🌍 Key drivers: Dropoff coordinates & pickup zones
 
 ---
 
-## 📈 Visualization
+## 📈 Model Performance Comparison
 
-A bar chart was plotted to compare RMSE values across models:
+The chart below shows RMSE values across all models:
 
-![Model Comparison](images/model_comparison_rmse.png)
+![Model RMSE Comparison](images/model_comparison_rmse.png)
+
+- ✅ **Random Forest** performed the best
+- 📉 Polynomial Regression followed closely
 
 ---
 
-## 📁 Folder Structure
+## 📂 Project Files
+
+- 📘 [Uber Fare Prediction Notebook](notebooks/uber_fare_prediction.Rmd)
+- 📊 [Uber Dataset](data/uber.csv)
+- 🖼️ [RMSE Chart](images/model_comparison_rmse.png)
+
+---
+
+## 🔧 Future Improvements
+
+- Include Haversine distance as a feature
+- Hyperparameter tuning for Random Forest
+- Deploy interactive dashboard using Shiny or Streamlit
+
+---
+
+## 🙋‍♂️ Author
+
+**Likhith Kumar Vuchooru**  
+MS in Business Analytics, Drexel University  
+📧 lv395@drexel.edu  
+🔗 [GitHub](https://github.com/Likhith-97)
