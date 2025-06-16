@@ -72,7 +72,7 @@ Uber fare pricing is influenced by a combination of geographic and trip-related 
 
 The chart below shows RMSE values across all models:
 
-![Model RMSE Comparison](images/model_comparison_rmse.png)
+Model RMSE Comparison.png
 
 - ✅ **Random Forest** performed the best
 - 📉 Polynomial Regression followed closely
